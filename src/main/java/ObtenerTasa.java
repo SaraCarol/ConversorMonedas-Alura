@@ -26,8 +26,8 @@ public class ObtenerTasa {
                 System.out.println("Error en la consulta. Código HTTP: " + response.statusCode());
                 return 0.0;
             }
-        } catch (IOException | InterruptedException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException("Ha ocurrido un error inesperado");
         }
 
     }
