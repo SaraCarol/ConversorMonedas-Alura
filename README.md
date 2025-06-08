@@ -38,14 +38,14 @@ Este es un proyecto en Java que permite convertir valores entre distintas moneda
 
 4. Interactúa con el menú desde consola:
 
- 🔑 API Key
+## 🔑 API Key
 Este proyecto requiere una API key gratuita de ExchangeRate API.
 Colócala en la clase ObtenerTasa.java:
 ```bash
 String API_KEY = "AQUÍ_TU_API_KEY";
 ```
 ----
-📝 Ejemplo de historial guardado
+## 📝 Ejemplo de historial guardado
 ```bash
 [
   {
@@ -59,13 +59,13 @@ String API_KEY = "AQUÍ_TU_API_KEY";
 ]
 
 ```
-✅ Posibles mejoras futuras
+## ✅ Posibles mejoras futuras
 - Interfaz gráfica 
 - Más monedas disponibles dinámicamente desde la API
 - Validaciones de entrada
 - Integración de logging con Log4j
 
-👩‍💻 Autora
+## 👩‍💻 Autora
 Sara Carolina Mendoza
 💡 Actualmente aprendiendo Java, Spring, React y todo lo que impulse mi crecimiento como desarrolladora.
 📍 Bogotá, Colombia
