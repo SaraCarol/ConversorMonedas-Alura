@@ -58,7 +58,7 @@ public class Main {
                             "¿Deseas guardar el historial de conversiones en un archivo? (s/n)");
                     String respuesta = scanner.next();
                     if (respuesta.equalsIgnoreCase("s")) {
-                        //guardarHistorialComoJson(historial);
+                        GeneradorDeArchivo.guardarJson(historial);
                         System.out.println(
                                 "Historial guardado exitosamente en 'historial_conversiones.txt'");
                     } else {

@@ -1,0 +1,16 @@
+[
+  {
+    "valorOrigen": "COP",
+    "valorDestino": "USD",
+    "cantidad": 10000.0,
+    "tasa": 2.4376E-4,
+    "resultado": 2.4376
+  },
+  {
+    "valorOrigen": "COP",
+    "valorDestino": "EUR",
+    "cantidad": 20000.0,
+    "tasa": 2.1416E-4,
+    "resultado": 4.2832
+  }
+]
