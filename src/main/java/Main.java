@@ -1,9 +1,17 @@
+import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, InterruptedException {
         Scanner scanner = new Scanner(System.in);
         int opcion = 0;
+        double cantidad = 0;
+        String valorOrigen;
+        String valorDestino;
+        double tasa;
+        double resultado;
+        DecimalFormat formato = new DecimalFormat("#,##0.00");
 
         while (opcion != 5){
             System.out.println("***********************************");
@@ -20,16 +28,48 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    System.out.println("Vas a convertir de USD a COP");
+                    valorOrigen = "USD";
+                    valorDestino = "COP";
+                    System.out.println("Vas a convertir de " + valorOrigen + " a " + valorDestino);
+                    System.out.println("Ingresa el valor a convertir:");
+                    cantidad = scanner.nextDouble();
+                    tasa = ObtenerTasa.obtenerTasaCambio(valorOrigen,valorDestino);
+                    resultado = Convertidor.convertirMoneda(cantidad, tasa);
+                    System.out.println(cantidad + " " + valorOrigen
+                            + " es igual a " + formato.format(resultado) + " " + valorDestino);
                     break;
                 case 2:
-                    System.out.println("Vas a convertir de COP a USD");
+                    valorOrigen = "COP";
+                    valorDestino = "USD";
+                    System.out.println("Vas a convertir de " + valorOrigen + " a " + valorDestino);
+                    System.out.println("Ingresa el valor a convertir:");
+                    cantidad = scanner.nextDouble();
+                    tasa = ObtenerTasa.obtenerTasaCambio(valorOrigen,valorDestino);
+                    resultado = Convertidor.convertirMoneda(cantidad, tasa);
+                    System.out.println(cantidad + " " + valorOrigen
+                            + " es igual a " + formato.format(resultado) + " " + valorDestino);
                     break;
                 case 3:
-                    System.out.println("Vas a convertir de EUR a COP");
+                    valorOrigen = "EUR";
+                    valorDestino = "COP";
+                    System.out.println("Vas a convertir de " + valorOrigen + " a " + valorDestino);
+                    System.out.println("Ingresa el valor a convertir:");
+                    cantidad = scanner.nextDouble();
+                    tasa = ObtenerTasa.obtenerTasaCambio(valorOrigen,valorDestino);
+                    resultado = Convertidor.convertirMoneda(cantidad, tasa);
+                    System.out.println(cantidad + " " + valorOrigen
+                            + " es igual a " + formato.format(resultado) + " " + valorDestino);
                     break;
                 case 4:
-                    System.out.println("Vas a convertir de COP a EUR");
+                    valorOrigen = "COP";
+                    valorDestino = "EUR";
+                    System.out.println("Vas a convertir de " + valorOrigen + " a " + valorDestino);
+                    System.out.println("Ingresa el valor a convertir:");
+                    cantidad = scanner.nextDouble();
+                    tasa = ObtenerTasa.obtenerTasaCambio(valorOrigen,valorDestino);
+                    resultado = Convertidor.convertirMoneda(cantidad, tasa);
+                    System.out.println(cantidad + " " + valorOrigen
+                            + " es igual a " + formato.format(resultado) + " " + valorDestino);
                     break;
                 case 5:
                     System.out.println("¡Adiós!");
