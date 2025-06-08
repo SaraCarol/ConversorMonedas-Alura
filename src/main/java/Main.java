@@ -1,5 +1,6 @@
-import java.io.IOException;
-import java.text.DecimalFormat;
+import java.io.IOException;;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -11,7 +12,8 @@ public class Main {
         String valorDestino;
         double tasa;
         double resultado;
-        DecimalFormat formato = new DecimalFormat("#,##0.00");
+        List<HistorialConversiones> historial = new ArrayList<>();
+
 
         while (opcion != 5){
             System.out.println("***********************************");
@@ -31,48 +33,39 @@ public class Main {
                     valorOrigen = "USD";
                     valorDestino = "COP";
                     System.out.println("Vas a convertir de " + valorOrigen + " a " + valorDestino);
-                    System.out.println("Ingresa el valor a convertir:");
-                    cantidad = scanner.nextDouble();
-                    tasa = ObtenerTasa.obtenerTasaCambio(valorOrigen,valorDestino);
-                    resultado = Convertidor.convertirMoneda(cantidad, tasa);
-                    System.out.println(cantidad + " " + valorOrigen
-                            + " es igual a " + formato.format(resultado) + " " + valorDestino);
+                    Convertidor.convertirMoneda(valorOrigen, valorDestino, scanner, historial);
                     break;
                 case 2:
                     valorOrigen = "COP";
                     valorDestino = "USD";
                     System.out.println("Vas a convertir de " + valorOrigen + " a " + valorDestino);
-                    System.out.println("Ingresa el valor a convertir:");
-                    cantidad = scanner.nextDouble();
-                    tasa = ObtenerTasa.obtenerTasaCambio(valorOrigen,valorDestino);
-                    resultado = Convertidor.convertirMoneda(cantidad, tasa);
-                    System.out.println(cantidad + " " + valorOrigen
-                            + " es igual a " + formato.format(resultado) + " " + valorDestino);
+                    Convertidor.convertirMoneda(valorOrigen, valorDestino, scanner, historial);
                     break;
                 case 3:
                     valorOrigen = "EUR";
                     valorDestino = "COP";
                     System.out.println("Vas a convertir de " + valorOrigen + " a " + valorDestino);
-                    System.out.println("Ingresa el valor a convertir:");
-                    cantidad = scanner.nextDouble();
-                    tasa = ObtenerTasa.obtenerTasaCambio(valorOrigen,valorDestino);
-                    resultado = Convertidor.convertirMoneda(cantidad, tasa);
-                    System.out.println(cantidad + " " + valorOrigen
-                            + " es igual a " + formato.format(resultado) + " " + valorDestino);
+                    Convertidor.convertirMoneda(valorOrigen, valorDestino, scanner, historial);
                     break;
                 case 4:
                     valorOrigen = "COP";
                     valorDestino = "EUR";
                     System.out.println("Vas a convertir de " + valorOrigen + " a " + valorDestino);
-                    System.out.println("Ingresa el valor a convertir:");
-                    cantidad = scanner.nextDouble();
-                    tasa = ObtenerTasa.obtenerTasaCambio(valorOrigen,valorDestino);
-                    resultado = Convertidor.convertirMoneda(cantidad, tasa);
-                    System.out.println(cantidad + " " + valorOrigen
-                            + " es igual a " + formato.format(resultado) + " " + valorDestino);
+                    Convertidor.convertirMoneda(valorOrigen, valorDestino, scanner, historial);
                     break;
                 case 5:
+                    System.out.println(
+                            "¿Deseas guardar el historial de conversiones en un archivo? (s/n)");
+                    String respuesta = scanner.next();
+                    if (respuesta.equalsIgnoreCase("s")) {
+                        //guardarHistorialComoJson(historial);
+                        System.out.println(
+                                "Historial guardado exitosamente en 'historial_conversiones.txt'");
+                    } else {
+                        System.out.println("No se guardó el historial.");
+                    }
                     System.out.println("¡Adiós!");
+
                     break;
                 default:
                     System.out.println("Opción no válida");
